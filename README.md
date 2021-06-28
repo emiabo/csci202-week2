@@ -4,7 +4,9 @@
 
 ## Todo
 
-- [ ] Color changes
-- [ ] Font changes
+- [x] Color changes
+- [x] Font changes
 - [ ] New graphic layout
 - [ ] Photos, GIFs, videos, sound files, additional HTML elements
+
+Color and font scheme is inspired by amber monochrome CRT displays (with the more traditional green used for some accents like links).
