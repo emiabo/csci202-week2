@@ -1,7 +1,11 @@
 /*
 IDEAS:
-Float images right in desktop view
-Fix table scaling
+Better hover animations for nav (both)
+Other text styling - description list color
+Fix top navbar scrolling (mobile) - try placing <div> above sections
+Experiment with dropdown navbar (requires JS)
+Make top navbar underneath scanlines (lot of z-index tricks)
+More comprehensive fixes for mobile (simulator looks wack)
 */
 html {
   scroll-behavior: smooth;
@@ -16,12 +20,18 @@ html {
   background: url('../images/scans1.png');
   background-repeat: repeat-x;
   z-index: -1;
+  box-shadow: inset 0px 0px 100px black;
 }
 
 body {
 background-color: #120a01;   
 color:#fef1e1;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
+margin: 8px 0px;
+}
+
+header, footer {
+  margin: 0px 8px;
 }
 
 h1, h2, h3, h4 {
@@ -78,8 +88,7 @@ nav a:hover {
 }
 
 img {
-width: 50%;
-max-width: 512px;
+width: 512px;
 display: block;
 margin-left: auto;
 margin-right: auto;
@@ -110,10 +119,24 @@ figcaption {
     padding: 2px;
     margin-top: 0.75em;
     text-align: center;
+    max-width: 512px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+figure {
+  float: right;
+}
+
+.figseparator {
+  clear: both;
+}
+
+ul {
+  list-style-type: square;
+}
 @media (max-width: 1149px) {
-  /*Turns page back to single column layout, with top navbar. Problem: clicking the links scrolls the content under the navbar, I haven't found an easy way to fix this without JS given the nav height has to flex to fit all the links. Bottom line, I wouldn't recommend viewing this page on mobile.*/
+  /*Turns page back to single column layout, with top navbar. Problem: clicking the links scrolls the content under the navbar, I haven't found an easy way to fix this without JS given the nav height has to change to fit all the links. Bottom line, I wouldn't recommend viewing this page on mobile really.*/
   nav h2 {
     display: none;
   }
@@ -121,12 +144,9 @@ figcaption {
   nav {
     width: 100%;
     background-color: #4e2c05;
+    
     text-align: center;
     margin-bottom: 10px;
-  }
-
-  nav:after {
-
   }
 
   nav li {
@@ -136,11 +156,20 @@ figcaption {
     font-size: 0.75em;
   }
   
+  img {
+    width: 90%;
+    max-width: 512px;
+  }
+
   img:hover{
     transform: none;
   }
 
   article {
-    margin: 0;
+    margin: 0px 8px;
+  }
+
+  figure {
+    float: none;
   }
 }
