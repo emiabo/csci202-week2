@@ -1,7 +1,6 @@
 /*
 IDEAS:
 Better hover animations for nav (both)
-Other text styling - description list color
 Fix top navbar scrolling (mobile) - try placing <div> above sections
 Experiment with dropdown navbar (requires JS)
 Make top navbar underneath scanlines (lot of z-index tricks)
@@ -34,9 +33,13 @@ header, footer {
   margin: 0px 8px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, #start{
   color: #fca311;
   font-family: 'IBM Plex Mono', monospace;
+}
+
+#start:hover {
+  text-decoration: none;
 }
 
 h1 {
@@ -86,6 +89,15 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+/*
+@keyframes cursor {
+  0% {background-color: #56e000; color: #120a01;}
+  49% {background-color: #56e000; color: #120a01;}
+  50% {background-color: #120a01; color: #56e000;}
+  99% {background-color: #120a01; color: #56e000;}
+  100% {background-color: #56e000; color: #120a01;}
+}*/
+
 
 img {
 width: 512px;
@@ -134,6 +146,11 @@ figure {
 
 ul {
   list-style-type: square;
+}
+
+dt {
+  font-weight: bold;
+  font-family: 'IBM Plex Mono', monospace;
 }
 @media (max-width: 1149px) {
   /*Turns page back to single column layout, with top navbar. Problem: clicking the links scrolls the content under the navbar, I haven't found an easy way to fix this without JS given the nav height has to change to fit all the links. Bottom line, I wouldn't recommend viewing this page on mobile really.*/
